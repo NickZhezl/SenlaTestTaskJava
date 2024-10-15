@@ -12,7 +12,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class HangmanGame {
-    private static final String[] WORDS = {"java", "programming", "hangman", "computer", "science"};
+    private static final String[] WORDS = {"java", "programming", "hangman", "computer", "science", "senla"};
     private String wordToGuess;
     private char[] guessedWord;
     private int lives;
