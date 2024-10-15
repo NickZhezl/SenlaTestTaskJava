@@ -1,6 +1,10 @@
 /**
- Автор : Железко Никита Сергеевич
- запуск через точку входа в классе main.
+ * Класс HangmanGame реализует логику игры "Виселица".
+ * В игре игрок пытается угадать слово, вводя буквы по одной.
+ * Игрок теряет жизни за каждую неправильную букву.
+ * Если слово отгадано полностью или игрок теряет все жизни, игра заканчивается.
+ *
+ * @author Никита Железко
  */
 package hangman;
 
@@ -13,7 +17,11 @@ public class HangmanGame {
     private char[] guessedWord;
     private int lives;
     private boolean[] guessedLetters;
-
+    /**
+     * Конструктор HangmanGame инициализирует игру.
+     * Слово для угадывания выбирается случайным образом из списка.
+     * Игроку дается 6 жизней.
+     */
     public HangmanGame() {
         Random random = new Random();
         this.wordToGuess = WORDS[random.nextInt(WORDS.length)];
@@ -25,6 +33,12 @@ public class HangmanGame {
             guessedWord[i] = '_';
         }
     }
+    /**
+     * Метод play() запускает процесс игры.
+     * Пользователю предлагается вводить буквы до тех пор, пока он не угадает слово
+     * или не потеряет все жизни. После каждой попытки выводится текущее состояние
+     * слова и количество оставшихся жизней.
+     */
 
     public void play() {
         Scanner scanner = new Scanner(System.in);
@@ -79,6 +93,9 @@ public class HangmanGame {
         }
     }
 
+    /**
+     * Отоброжает графически виселицу
+     */
     private void drawHangman() {
         System.out.println("Человечек на виселице:");
         switch (lives) {

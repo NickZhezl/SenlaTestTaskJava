@@ -1,3 +1,9 @@
+/**
+ * Точка main для игры "Виселица".
+ * Создает объект HangmanGame и запускает игру.
+ *
+ * @author Никита Железко
+ */
 package hangman;
 
 public class Main {
